@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/vue.js"></script>
+  </head>
+  <body>
+    <div id="el">
+      <input type="text" v-model="username" type="text" />
+      <input type="button" @click="getUsername" value="点击" />
+      <span :class="username===''?addtext:addcolor;">
+        {{username}}
+      </span>
+    </div>
+  </body>
+  <script>
+    new vue({
+      el: "#el",
+      data: {
+        username: "",
+      },
+      methods: {
+        getUsername() {
+          if (this.username != "") {
+            this.username = "√";
+          } else {
+            this.username = "请输入内容";
+          }
+        },
+      },
+    });
+  </script>
+  <style>
+    .addcolor {
+      background: greenyellow;
+    }
+    .addtext {
+      color: red;
+    }
+  </style>
+</html>

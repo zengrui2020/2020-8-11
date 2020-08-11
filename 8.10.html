@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/vue.js"></script>
+  </head>
+  <body>
+    <div id="el">
+      {{number}}
+      <input type="text" :value="number" />
+      <input type="button" @clock="fz" />
+      <input type="text" :value="name" />
+      <input type="button" value="点击" @click="on" />
+    </div>
+  </body>
+  <script>
+    new vue({
+      el: "#el",
+      data() {
+        return {
+          number: 10,
+          name: "",
+        };
+      },
+      methods: {
+        fz() {
+          this.number++;
+        },
+        on() {
+          this.name;
+        },
+      },
+    });
+  </script>
+</html>

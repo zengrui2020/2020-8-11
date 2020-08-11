@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/vue.js"></script>
+  </head>
+  <body>
+    <div id="box">
+      <input type="text" ref="number" />
+      <input type="button" value="点我" @click="fn" />
+      <div v-for="item in num" ref="numr"></div>
+    </div>
+  </body>
+  <script>
+    new Vue({
+      el: "#box",
+      data: {
+        num: 20,
+      },
+      methods: {
+        fn() {
+          console.log(this.$refs.numr.length);
+        },
+      },
+    });
+  </script>
+</html>
